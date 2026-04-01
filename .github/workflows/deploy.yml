@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Or your default branch name
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -15,19 +15,29 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
+          # Points to the lock file inside your docs folder
+          cache-dependency-path: docs/package-lock.json
+
       - name: Install dependencies
+        # Runs the command inside the docs folder
         run: npm install
+        working-directory: docs
+
       - name: Build
         run: npm run build
+        working-directory: docs
+
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Vite builds to the 'dist' folder
+          # Points to the build output inside the docs folder
+          path: 'docs/dist'
 
   deploy:
     needs: build_site
