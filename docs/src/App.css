@@ -1,0 +1,379 @@
+.site {
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(22, 150, 150, 0.14), transparent 40%),
+    radial-gradient(circle at 95% 8%, rgba(250, 107, 61, 0.2), transparent 38%),
+    linear-gradient(160deg, #fff8f2 0%, #f9fffb 55%, #eef8ff 100%);
+}
+
+.hero {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 52px 32px 12px;
+}
+
+.kicker {
+  margin: 0;
+  color: #007b8f;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 8px 0 10px;
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  color: #0b2632;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.05;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 0;
+  color: #38556a;
+}
+
+.sliderSection {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 8px 32px 24px;
+}
+
+.comparisonPanel {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #cee0e8;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 22px rgba(8, 33, 43, 0.08);
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  color: #3f6676;
+  margin-bottom: 10px;
+}
+
+.codeCompare {
+  --split: 50%;
+  position: relative;
+  min-height: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #334f5f;
+  background: #0f2230;
+  touch-action: none;
+  cursor: ew-resize;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: none;
+}
+
+.codeLayer {
+  margin: 0;
+  height: 100%;
+  min-height: 360px;
+  box-sizing: border-box;
+  padding: 12px 22px;
+  overflow: hidden;
+  white-space: pre;
+  font-size: 0.82rem;
+  line-height: 1.16;
+  pointer-events: none;
+}
+
+.codeLayer .line {
+  display: block;
+}
+
+.codeLayer .segment {
+  color: #7fa9bd;
+}
+
+.codeLayer .addr {
+  color: #8ec9f8;
+}
+
+.codeLayer .bytes {
+  color: #9db4c6;
+}
+
+.codeLayer .mnemonic {
+  color: #ffd391;
+}
+
+.codeLayer .operand {
+  color: #d9e8f2;
+}
+
+.codeLayer .label {
+  color: #99e0cc;
+}
+
+.codeLayer .comment {
+  color: #7ca1b5;
+  font-style: italic;
+}
+
+.codeLayer .xref,
+.codeLayer .symbol {
+  color: #8fd8ff;
+  text-decoration: none;
+}
+
+.codeLayer .xrefNote {
+  color: #8cb1c6;
+}
+
+.codeBefore {
+  color: #b9d4e0;
+}
+
+.codeAfter {
+  color: #e7f6ff;
+  position: absolute;
+  inset: 0;
+  background: #112a39;
+  clip-path: inset(0 0 0 var(--split));
+  transition: clip-path 260ms ease;
+}
+
+.divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--split);
+  width: 3px;
+  background: #ffd9b4;
+  transform: translateX(-1.5px);
+  box-shadow: 0 0 0 2px rgba(255, 217, 180, 0.15);
+  pointer-events: none;
+  transition: left 260ms ease;
+}
+
+.dividerHandle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 44px;
+  border-radius: 999px;
+  background: #ffd9b4;
+  border: 2px solid #f5c798;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+}
+
+.dividerHandle::before,
+.dividerHandle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 2px;
+  height: 14px;
+  background: #ac6f33;
+  transform: translateY(-50%);
+}
+
+.dividerHandle::before {
+  left: 7px;
+}
+
+.dividerHandle::after {
+  right: 7px;
+}
+
+.codeCompare.dragging .dividerHandle {
+  background: #ffe4c6;
+}
+
+.codeCompare.dragging .codeAfter,
+.codeCompare.dragging .divider {
+  transition: none;
+}
+
+.bottomActions {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 32px 44px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  text-decoration: none;
+  background: #143548;
+  color: #ecf5fb;
+  border: 1px solid #1d4d67;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  min-width: 168px;
+  box-shadow: 0 8px 18px rgba(20, 53, 72, 0.2);
+}
+
+.actionButton:hover {
+  background: #1d4d67;
+}
+
+.docPage {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 8px 32px 24px;
+}
+
+.docLayout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.docSidebar {
+  position: sticky;
+  top: 16px;
+}
+
+.docNav {
+  display: grid;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #cee0e8;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 8px 20px rgba(8, 33, 43, 0.08);
+}
+
+.docNavLink {
+  text-decoration: none;
+  color: #1d465c;
+  border-radius: 9px;
+  padding: 8px 10px;
+  font-size: 0.92rem;
+}
+
+.docNavLink:hover {
+  background: rgba(30, 106, 139, 0.08);
+}
+
+.docNavLink.active {
+  background: #143548;
+  color: #ecf5fb;
+}
+
+.docContentPane {
+  min-height: 420px;
+}
+
+.docMarkdown {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #cee0e8;
+  border-radius: 16px;
+  padding: 20px 22px;
+  box-shadow: 0 10px 22px rgba(8, 33, 43, 0.08);
+  color: #173646;
+}
+
+.docMarkdown h1,
+.docMarkdown h2,
+.docMarkdown h3 {
+  color: #0f2f41;
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  margin-top: 1.2em;
+}
+
+.docMarkdown h1 {
+  margin-top: 0;
+}
+
+.docMarkdown p,
+.docMarkdown li {
+  line-height: 1.58;
+}
+
+.docMarkdown code {
+  background: #edf4f8;
+  border-radius: 6px;
+  padding: 0.12rem 0.35rem;
+}
+
+.docMarkdown pre {
+  margin: 0.9rem 0;
+  padding: 0.8rem;
+  overflow-x: auto;
+}
+
+.docMarkdown pre code {
+  background: transparent;
+  padding: 0;
+}
+
+pre {
+  margin: 0;
+  background: #0f2230;
+  color: #e7f6ff;
+  border-radius: 10px;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 22px 18px 12px;
+  }
+
+  .sliderSection {
+    padding: 8px 18px 18px;
+  }
+
+  .bottomActions {
+    padding: 0 18px 30px;
+  }
+
+  .docPage {
+    padding: 8px 18px 18px;
+  }
+
+  .docLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .docSidebar {
+    position: static;
+  }
+
+  .docNav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .docMarkdown {
+    padding: 14px;
+  }
+
+  .comparisonPanel {
+    padding: 12px;
+  }
+
+  .codeCompare,
+  .codeLayer {
+    min-height: 320px;
+  }
+
+  .codeLayer {
+    padding: 10px 12px;
+  }
+}

@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+
+#root {
+  width: 100%;
+}
