@@ -315,7 +315,7 @@ function App() {
           <p className="kicker">Neurosymbolic Disassembly</p>
           <h1>{documentationData.title}</h1>
           <p className="subtitle">
-            Navigate sections from the left sidebar. Each page displays one section from markdown.
+            {/* Navigate sections from the left sidebar. Each page displays one section from markdown. */}
           </p>
         </section>
 
