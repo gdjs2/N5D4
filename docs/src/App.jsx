@@ -367,7 +367,7 @@ function App() {
 
       <div className="bottomActions">
         <a className="actionButton" href="#/documentation/introduction"><BookOpen size={17} strokeWidth={2} />Documentation</a>
-        <a className="actionButton" href="https://github.com" target="_blank" rel="noreferrer"><FaGithub size={17} />GitHub</a>
+        <a className="actionButton" href="https://github.com/gdjs2/N5D4" target="_blank" rel="noreferrer"><FaGithub size={17} />GitHub</a>
       </div>
     </div>
     )
